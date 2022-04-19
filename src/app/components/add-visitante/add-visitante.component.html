@@ -1,77 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--es como el JSTL - customTag-->
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- CSS only -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<head th:replace="principal::head">
+	<title>Getting Started: Serving Web Content</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <div class="container" style="margin-left: 10%;width: 80%;">
-    <form>
+	<div id="contenedor">
+		<header th:replace="principal::header">
+		</header>
 
-      <div class="form-group">
-        <div class="form-group col-md-6">
-          <label for="validationServer01">Fecha: </label> <input type="date" class="form-control"
-            id="validationServer01" name="txtFecha" value=" ${c.fechaNacimiento}" required>
-          <div id="validationServer04Feedback" class="invalid-feedback">
-            Seleccione una fecha</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-group col-md-6">
-          <label for="validationServer01">Hora:: </label> <input type="time" class="form-control"
-            id="validationServer01" name="txtFecha" required>
-          <div id="validationServer04Feedback" class="invalid-feedback">
-            Seleccione una fecha</div>
-        </div>
-      </div>
+		<main>
+			<nav th:replace="principal::nav">
+			</nav>
+			<section style="width: 65%; float: left;">
+				<div style="margin-left: 20%; width: 60%;">
+					<h2>Mantenimiento de Propietario</h2>
+					<form action="/grabar" method="post" th:object="${producto}">
 
-      <div class="form-group">
-        <div class="form-group col-md-6">
-          <label for="inputState">Tipo</label>
-          <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-      </div>
+						<div class="form-group">
+							<label for="exampleFormControlInput1">Codigo de Propietario</label>
+							<input type="number" th:field="*{codpropietario}" class="form-control"
+								id="exampleFormControlInput1" placeholder="Ingrese Codigo" required>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlInput1">DNI</label>
+							<input type="text" th:field="*{dni}" class="form-control" id="exampleFormControlInput1"
+								placeholder="Ingrese DNI" required>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Nombre</label>
+							<input type="text" th:field="*{nombre}" class="form-control" id="exampleFormControlInput1"
+								placeholder="Ingrese Nombre" required>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Apellido Paterno</label>
+							<input type="text" th:field="*{primerapellido}" class="form-control"
+								id="exampleFormControlInput1" placeholder="Ingrese Apellido Paterno" required>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Apellido Materno</label>
+							<input type="text" th:field="*{segundoapellido}" class="form-control"
+								id="exampleFormControlInput1" placeholder="Ingrese Apellido Materno" required>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="exampleFormControlSelect1">Telefono</label>
+								<input type="text" th:field="*{telefono}" class="form-control"
+									id="exampleFormControlInput1" placeholder="Ingrese Telefono" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="exampleFormControlSelect1">Celular</label>
+								<input type="text" th:field="*{celular}" class="form-control"
+									id="exampleFormControlInput1" placeholder="Ingrese Celular" required>
+							</div>
+						</div>
 
-      <div class="form-group">
-        <div class="form-group col-md-6">
-          <label for="inputAddress">descripcion</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="form-group col-md-6">
-          <label for="inputState">Usuario</label>
-          <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-      </div>
 
 
-      <button type="submit" class="btn btn-primary">Registrar</button>
-    </form>
-  </div>
+
+
+
+
+						<button type="submit" class="btn btn-primary">Registrar</button>
+						<a href="/listar" class="btn btn-primary">Listar Propietarios</a>
+						<a href="/listar" class="btn btn-warning">Actualizar</a>
+						<a href="/listar" class="btn btn-danger">Eliminar</a>
+
+
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer th:replace="principal::footer">
+		</footer>
+
+	</div>
+
+
 </body>
-
-</html>
