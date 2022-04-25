@@ -9,6 +9,8 @@ import { AddIncidenteComponent } from './components/add-incidente/add-incidente.
 import { AddServiciosComponent } from './components/add-servicios/add-servicios.component';
 import { AddVisitanteComponent } from './components/add-visitante/add-visitante.component';
 import { AddDepartamentoComponent } from './components/add-departamento/add-departamento.component';
+import { LoginComponent } from './components/login/login.component';
+import { AddMascotaComponent } from './components/add-mascota/add-mascota.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AddDepartamentoComponent } from './components/add-departamento/add-depa
     AddIncidenteComponent,
     AddServiciosComponent,
     AddVisitanteComponent,
-    AddDepartamentoComponent
+    AddDepartamentoComponent,
+    LoginComponent,
+    AddMascotaComponent
   ],
   imports: [
     BrowserModule,
