@@ -6,6 +6,7 @@ import { AddPropietarioComponent } from './components/add-propietario/add-propie
 import { AddServiciosComponent } from './components/add-servicios/add-servicios.component';
 import { AddUsuarioComponent } from './components/add-usuario/add-usuario.component';
 import { AddVisitanteComponent } from './components/add-visitante/add-visitante.component';
+import { AddMascotaComponent } from './components/add-mascota/add-mascota.component';
 
 const routes: Routes = [
   {path:"addUsuario",component:AddUsuarioComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:"addIncidente",component:AddIncidenteComponent},
   {path:"addServicio",component:AddServiciosComponent},
   {path:"addVisitante",component:AddVisitanteComponent},
+  {path:"addMascota",component:AddMascotaComponent},
   {path:"addDepartamento",component:AddDepartamentoComponent}
 ];
 
