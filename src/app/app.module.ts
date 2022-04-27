@@ -1,34 +1,45 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddUsuarioComponent } from './components/add-usuario/add-usuario.component';
+import { MenuComponent } from './menu/menu.component';
+import { IndexComponent } from './index/index.component';
+import { LoginComponent } from './auth/login.component';
+import { AddDepartamentoComponent } from './components/add-departamento/add-departamento.component';
+import { AddMascotaComponent } from './components/add-mascota/add-mascota.component';
 import { AddPropietarioComponent } from './components/add-propietario/add-propietario.component';
+import { AddVisitanteComponent } from './components/add-visitante/add-visitante.component';
 import { AddIncidenteComponent } from './components/add-incidente/add-incidente.component';
 import { AddServiciosComponent } from './components/add-servicios/add-servicios.component';
-import { AddVisitanteComponent } from './components/add-visitante/add-visitante.component';
-import { AddDepartamentoComponent } from './components/add-departamento/add-departamento.component';
-import { LoginComponent } from './components/login/login.component';
-import { AddMascotaComponent } from './components/add-mascota/add-mascota.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddUsuarioComponent,
-    AddPropietarioComponent,
-    AddIncidenteComponent,
-    AddServiciosComponent,
-    AddVisitanteComponent,
-    AddDepartamentoComponent,
+    MenuComponent,
     LoginComponent,
-    AddMascotaComponent
+    IndexComponent,
+    AddDepartamentoComponent,
+    AddMascotaComponent,
+    AddPropietarioComponent,
+    AddVisitanteComponent,
+    AddIncidenteComponent,
+    AddServiciosComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     AppRoutingModule
+
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
