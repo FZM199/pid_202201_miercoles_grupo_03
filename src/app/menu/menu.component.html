@@ -18,11 +18,29 @@
 
 
         <li class="nav-item dropdown" *ngIf="isLogged">
+
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+           data-toggle="dropdown" aria-expanded="false">
+
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+
             Usuario
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a routerLink="add-usuario" class="dropdown-item">Crear Usuario</a>
+
+            </div>
+        </li> 
+        
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Departamento
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a routerLink="add-departamento" class="dropdown-item">Crear Departamento</a>
+            </div>
+        </li> 
+
           </div>
         </li>
 
@@ -41,6 +59,10 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a routerLink="add-propietario" class="dropdown-item">Crear Propietario</a>
+
+            </div>
+        </li> 
+
           </div>
         </li>  
 
@@ -78,8 +100,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a routerLink="add-departamento" class="dropdown-item">Crear Departamento</a>
           </div>
-        </li>  
-        
+        </li> 
       </ul>
     </div>
   </nav>
