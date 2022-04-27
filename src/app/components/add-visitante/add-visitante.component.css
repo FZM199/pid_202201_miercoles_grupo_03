@@ -1,0 +1,12 @@
+.container-section{
+    background-color: aqua;
+    width: 100%;
+    height: auto;
+}
+
+.section-content{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}

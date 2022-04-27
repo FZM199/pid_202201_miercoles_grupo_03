@@ -1,70 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  
-</head>
-
-<body>
-    <section style="width: 65%; float: left;">
-        <div style="margin-left: 20%; width: 60%;">
-            <h2>Mantenimiento de Propietario</h2>
-    <form>
-		<div class="form-group">
-			<div class="form-group col-md-6">
-			  <label for="inputAddress">codigo</label>
-			  <input type="text" class="form-control" id="inputAddress" placeholder="">
-			</div>
-		  </div>
-
-		  <div class="form-group">
-			<div class="form-group col-md-6">
-			  <label for="inputAddress">DNI</label>
-			  <input type="text" class="form-control" id="inputAddress" placeholder="">
-			</div>
-		  </div>
-
-
-		  <div class="form-group">
-			<div class="form-group col-md-6">
-			  <label for="inputAddress">Nombre</label>
-			  <input type="text" class="form-control" id="inputAddress" placeholder="">
-			</div>
-		  </div>
+<section class="row ">
+  <h2 class="col-md-12 text-center">Visitante</h2>
+    <form class="col-md-6 mx-auto" [formGroup]="visitorForm">
+      <div class="form-group">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">codigo</label>
+          <input formControlName="code" type="text" class="form-control" id="inputAddress" placeholder="">
+        </div>
+      </div>
 
       <div class="form-group">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">DNI</label>
+          <input formControlName="dni" type="text" class="form-control" id="inputAddress" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Fecha de Nacimiento</label>
+          <input formControlName="date" type="date" class="form-control" id="inputAddress" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Nombre</label>
+          <input formControlName="name" type="text" class="form-control" id="inputAddress" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Apellido</label>
+          <input formControlName="lastName" type="text" class="form-control" id="inputAddress" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Correo</label>
+          <input formControlName="email" type="text" class="form-control" id="inputAddress" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Telefono</label>
+          <input formControlName="phone" type="text" class="form-control" id="inputAddress" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-12">
           <label for="inputAddress">codigo De Usuario</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="">
+          <input formControlName="userCode" type="text" class="form-control" id="inputAddress" placeholder="">
         </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">codigo De Propietario</label>
+          <input formControlName="ownerCode" type="text" class="form-control" id="inputAddress" placeholder="">
         </div>
-        <div class="form-group">
-          <div class="form-group col-md-6">
-            <label for="inputAddress">codigo De Propietario</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="">
-          </div>
-          </div>
+      </div>
 
-
-
-
-
-
-
-      
-
-
-      <button type="submit" class="btn btn-primary">Registrar</button>
+      <button type="button" (click)="registerVisitor()" class="btn btn-primary">Registrar</button>
     </form>
-</div>
 </section>
-</body>
-
-</html>

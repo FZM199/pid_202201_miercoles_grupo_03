@@ -11,6 +11,9 @@ import { AddVisitanteComponent } from './components/add-visitante/add-visitante.
 import { AddDepartamentoComponent } from './components/add-departamento/add-departamento.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddMascotaComponent } from './components/add-mascota/add-mascota.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,15 @@ import { AddMascotaComponent } from './components/add-mascota/add-mascota.compon
     AddVisitanteComponent,
     AddDepartamentoComponent,
     LoginComponent,
-    AddMascotaComponent
+    AddMascotaComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

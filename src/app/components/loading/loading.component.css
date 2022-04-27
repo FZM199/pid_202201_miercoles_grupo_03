@@ -1,0 +1,30 @@
+.loader__container {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loader__img {
+    --size-loader: 150px;
+    width: var(--size-loader);
+    height: var(--size-loader);
+  }
+  .loader__img svg {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: block;
+    shape-rendering: auto;
+  }
+  .loader__img rect {
+    fill: rgb(239, 68, 68);
+    width: 6px;
+    height: 12px;
+  }
+  
