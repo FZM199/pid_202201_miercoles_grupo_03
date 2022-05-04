@@ -1,5 +1,7 @@
+import { Ubigeo } from "./ubigeo.model";
+
 export class Usuario {
-    codusua?: number;
+    idUsuario?: number;
     dni?: String;
     nombre?: String;
     primerapellido?: String;
@@ -10,7 +12,7 @@ export class Usuario {
     correo?: String;
     password?: String;
     fechareg?: Date;
-    codubigeo?: number;
+    ubigeo?: Ubigeo;
     login?: String;
     estado?: boolean;
 }
