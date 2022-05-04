@@ -12,54 +12,47 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./add-propietario.component.css']
 })
 export class AddPropietarioComponent implements OnInit {
-  
-  lstDepartamento: Departamento[]=[];
-
-  lstUsuario: Usuario[]=[];
+  usuarios : Usuario[] = [];
+  departamentos : Departamento[] = [];
 
   propietario:Propietarios={
-    departamento:{
-      cod_departamento:-1
+    idUsuario:{
+      idUsuario: -1
     },
-
-    usuario:{
-      idUsuario:-1
+    coddepartamento:{
+      coddepartamento: -1
     }
-   }
-  
-  constructor(private propietarioservice:PropietarioService,
-    private departamentoservice:DepartamentoService,
-    private usuarioservice:UsuarioService) {
-      
-      this.departamentoservice.listaDepartamento().subscribe(
-          departamentos => this.lstDepartamento=departamentos
-      );
-
-      this.usuarioservice.listaUsuario().subscribe(
-        usuarios=> this.lstUsuario=usuarios
-      );
-     }
-
-  
-
- 
-
-  savePropietario(){
-    console.log(">> savePropietario");
-    console.log(this.propietario);
-
-    this.propietarioservice.create(this.propietario).subscribe(
-      response =>{
-        console.log(response.mensaje);
-        alert(response.mensaje)
-      },
-      error =>{
-        console.log(error);
-      },
-    );
   }
+
+
+  constructor(private propietarioService: PropietarioService,
+              private usuarioService: UsuarioService,
+              private departamentoService: DepartamentoService) { 
+
+                this.usuarioService.listaUsuario().subscribe(
+                  (u) => this.usuarios = u
+                );
+                
+                this.departamentoService.listaDepartamento().subscribe(
+                  (d) => this.departamentos = d
+                );
+ }
+
+ savePropietario(){
+  console.log(">>savePropietario");
+  console.log(this.propietario);
+  this.propietarioService.create(this.propietario).subscribe(
+    response =>{
+      console.log(response.mensaje);
+      alert(response.mensaje)
+    },
+    error =>{
+      console.error(error);    
+    },
+  );
+ }
 
   ngOnInit(): void {
   }
 
-}
+ }

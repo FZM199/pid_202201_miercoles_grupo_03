@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { AppSettings } from '../app.settings';
 import { Usuario } from '../models/usuario.model';
 
-const baseURL="http://localhost:8090/rest/util";
+
+const baseURL= "http://localhost:8055/rest/util/usuario";
 
 const baseUrlUtil = AppSettings.API_ENDPOINT+ '/util';
 const baseUrlUsuario= AppSettings.API_ENDPOINT+ '/usuario';
@@ -14,9 +15,9 @@ const baseUrlUsuario= AppSettings.API_ENDPOINT+ '/usuario';
 })
 export class UsuarioService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http : HttpClient) { }
 
   listaUsuario():Observable<Usuario[]>{
-    return this.http.get<Usuario[]>(baseURL+"/listausuarios");
+      return this.http.get<Usuario[]>(baseURL);
   }
 }

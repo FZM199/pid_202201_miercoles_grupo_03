@@ -4,15 +4,15 @@ import { Usuario } from "./usuario.model";
 
 export class Propietarios {
     codpropietario?: number;
-    dni?: String;
-    nombre?: String;
-    primerapellido?: String;
-    segundoapellido?: String;
-    telefono?: String;
-    celular?: String;
+    dni?: number;
+    nombre?: string;
+    primerapellido?: string;
+    segundoapellido?: string;
+    telefono?: string;
+    celular?: string;
     fecharegistro?: Date;
-    horaregistro?: String;
-    estado?: Boolean;
-    usuario?: Usuario;
-    departamento?: Departamento;
+    horaregistro?: Time;
+    estado?: boolean;
+    idUsuario?: Usuario;
+    coddepartamento?: Departamento
 }

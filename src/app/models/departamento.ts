@@ -1,12 +1,12 @@
+import { Edificio } from "./edificio.model";
+import { Usuario } from "./usuario.model";
+
 export class Departamento {
-    
-    cod_departamento?: number;
-    num_departamento?: String;
-    fecha_entrega?: Date;
-    precio?: DoubleRange;
-    nro_piso?: number;
-    cod_edificio?: number;
-    cod_usuario?: number;
-
-
+    coddepartamento?: number;
+    numdepartamento?: string;
+    fechaentrega?: Date;
+    precio?: number;
+    nropiso?: number;
+    codedificio?: Edificio;
+    idUsuario?: Usuario
 }
