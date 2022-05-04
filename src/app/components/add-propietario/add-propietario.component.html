@@ -1,96 +1,102 @@
-<!DOCTYPE HTML>
-<app-menu></app-menu>
-<html xmlns:th="http://www.thymeleaf.org">
-<!--es como el JSTL - customTag-->
+<div id="contenedor">
+	<form class="content" (submit)="savePropietario()">
 
-<head th:replace="principal::head">
-	<title>Getting Started: Serving Web Content</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-</head>
-
-<div style="margin-top: 4%">
-	<form class="content" (ngSubmit)="savePropietario()">
-		<div class="submit-form">
-
+		<div class="submit-form" style="margin-left: 20%;">
 			<div class="row">
 				<div class="col-lg-12">
-					<h6>REGISTRO DE PROPIETARIO</h6>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 3%">
-				<div class="col-lg-4">
-					<label for="dni">DNI</label>
-					<input type="number" class="form-control" name="dni" id="dni" [(ngModel)]="propietario.dni">
-				</div>
-				<div class="col-lg-4">
-					<label for="nombre">Nombre</label>
-					<input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="propietario.nombre">
+					<h2>Registro de Propietario</h2>
 				</div>
 			</div>
 
 			<div class="row" style="margin-top: 3%">
-				<div class="col-lg-4">
-					<label for="primerapellido">Apellido Paterno</label>
-					<input type="text" class="form-control" name="primerapellido" id="primerapellido" [(ngModel)]="propietario.primerapellido">
+				<!--<div class="col-lg-3">
+					<label for="exampleFormControlInput1">Codigo de Propietario</label>
+					<input type="number" class="form-control" id="codpropietario" placeholder="Ingrese Codigo"
+						name="codpropietario" [(ngModel)]="propietario.codpropietario" />
+				</div>-->
+				<div class="col-lg-3">
+					<label for="exampleFormControlInput1">DNI</label>
+					<input type="number" class="form-control" id="dni" placeholder="Ingrese DNI" name="dni"
+						[(ngModel)]="propietario.dni" required />
 				</div>
-				<div class="col-lg-4">
-						<label for="segundoapellido">Apellido Materno</label>
-						<input type="text" class="form-control" name="segundoapellido" id="segundoapellido" [(ngModel)]="propietario.segundoapellido">
+				<div class="col-lg-3">
+					<label for="exampleFormControlSelect1">Nombre</label>
+					<input type="text" class="form-control" id="nombre" placeholder="Ingrese Nombre" name="nombre"
+						[(ngModel)]="propietario.nombre" required />
 				</div>
-			</div>
-
-			<div class="row" style="margin-top: 3%">
-				<div class="col-lg-4">
-					<label for="telefono">Telefono</label>
-					<input type="text" class="form-control" name="telefono" id="telefono" [(ngModel)]="propietario.telefono">
-				</div>
-				<div class="col-lg-4">
-					<label for="celular">Celular</label>
-					<input type="text" class="form-control"  name="celular" id="celular"	 [(ngModel)]="propietario.celular">
-				</div>
-			</div>
-
-			<div class="row" style="margin-top: 3%">
-				<div class="col-lg-4">
-					<label for="fecharegistro">Fecha</label>
-					<input type="date" class="form-control"  name="fecharegistro" id="fecharegistro"	 [(ngModel)]="propietario.fecharegistro">
-				</div>
-				<div class="col-lg-4">
-					<label for="horaregistro">Hora</label>
-					<input type="time" class="form-control"  name="horaregistro" id="horaregistro"	 [(ngModel)]="propietario.horaregistro">
-
+				<div class="col-lg-3">
+					<label for="exampleFormControlSelect1">Apellido Paterno</label>
+					<input type="text" class="form-control" id="primerapellido" placeholder="Ingrese Apellido Paterno"
+						name="primerapellido" [(ngModel)]="propietario.primerapellido" required />
 				</div>
 			</div>
 
 			<div class="row" style="margin-top: 3%">
-				<div class="col-lg-4">
-					<label for="usuario">Usuario</label>
-					<select id="usuario" name="usuario" class="form-control" [(ngModel)]="propietario.idUsuario!.idUsuario">
-					<option value="-1"> [Seleccione] </option>
-					<option *ngFor="let aux of usuarios" value="{{aux.idUsuario}}">
-							{{ aux.nombre }} {{ aux.primerapellido}}
-					</option>
+
+				<div class="col-lg-3">
+					<label for="exampleFormControlSelect1">Apellido Materno</label>
+					<input type="text" class="form-control" id="segundoapellido" placeholder="Ingrese Apellido Materno"
+						name="segundoapellido" [(ngModel)]="propietario.segundoapellido" required />
+				</div>
+				<div class="col-lg-3">
+					<label for="exampleFormControlSelect1">Telefono</label>
+					<input type="text" class="form-control" id="telefono" placeholder="Ingrese Telefono" name="telefono"
+						[(ngModel)]="propietario.telefono" required />
+				</div>
+				<div class="col-lg-3">
+					<label for="exampleFormControlSelect1">Celular</label>
+					<input type="text" class="form-control" id="celular" placeholder="Ingrese Celular" name="celular"
+						[(ngModel)]="propietario.celular" required />
+				</div>
+
+			</div>
+
+			<div class="row" style="margin-top: 3%">
+				
+				<div class=" col-lg-3">
+					<label for="exampleFormControlSelect1">Fecha de Registro</label>
+					<input type="date" class="form-control" id="fecharegistro" placeholder="Ingrese Celular" name="fecharegistro"
+						[(ngModel)]="propietario.fecharegistro" required />
+				</div>
+
+				<div class=" col-lg-3">
+					<label for="exampleFormControlSelect1">Hora de Registro</label>
+					<input type="time" class="form-control" id="horaregistro" placeholder="Ingrese Celular" name="horaregistro"
+						[(ngModel)]="propietario.horaregistro" required />
+				</div>
+				<!--
+				<div class="col-lg-3">
+					<label for="exampleFormControlSelect1">Estado</label>
+					<input type="number" class="form-control" id="celular" placeholder="Ingrese Estado" name="estado"
+						[(ngModel)]="propietario.estado" required />
+				</div>-->
+
+			</div>
+			<div class="row" style="margin-top: 3%">
+
+				<div class="col-lg-3">
+					<label for="tipo">Usuario</label>
+					<select id="idTipoReclamo" name="idTipoReclamo" class="form-control" [(ngModel)]="propietario.usuario!.idUsuario">
+						<option value="-1"> [Seleccione] </option>
+						<option *ngFor="let us of lstUsuario" value="{{us.idUsuario}}" name="idUsuario" >{{us.nombre}}</option>
+
 					</select>
 				</div>
-				<div class="col-lg-4">
-					<label for="usuario">Departamento</label>
-					<select id="departamento" name="departamento" class="form-control" [(ngModel)]="propietario.coddepartamento!.coddepartamento">
-					<option value="-1"> [Seleccione] </option>
-					<option *ngFor="let aux of departamentos" value="{{aux.coddepartamento}}">
-							{{ aux.numdepartamento }}
-					</option>
+				<div class="col-lg-3">
+					<label for="tipo">Departamento</label><!---->
+					<select id="idTipoReclamo" name="idTipoReclamo" class="form-control"  [(ngModel)]="propietario.departamento!.cod_departamento">
+						<option value="-1"> [Seleccione] </option>
+						<option *ngFor="let aux of lstDepartamento" value="{{aux.cod_departamento}}" name="cod_departamento" >{{aux.num_departamento}}</option>
+						
 					</select>
 				</div>
 			</div>
 
-			</div>
-				<div class="row" style="margin-top: 3%">
-						<div class="col-lg-12">
-						<button class="btn btn-success">Enviar</button>
+			<div class="row" style="margin-top: 3%">
+				<div class="col-lg-12">
+					<button type="submit" class="btn btn-primary">Registrar</button>
 				</div>
-			</div>   													
+			</div>
+		</div>
 	</form>
 </div>

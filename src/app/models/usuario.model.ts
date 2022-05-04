@@ -2,17 +2,17 @@ import { Ubigeo } from "./ubigeo.model";
 
 export class Usuario {
     idUsuario?: number;
-    dni?: string;
-    nombre?: string;
-    primerapellido?: string;
-    segundoapellido?: string;
-    telefono?: string;
-    celular?: string;
-    direccion?: string;
-    correo?: string;
-    password?: string;
+    dni?: String;
+    nombre?: String;
+    primerapellido?: String;
+    segundoapellido?: String;
+    telefono?: String;
+    celular?: String;
+    direccion?: String;
+    correo?: String;
+    password?: String;
     fechareg?: Date;
-    idUbigeo?: Ubigeo;
-    login?: string;
-    estado?: boolean
+    ubigeo?: Ubigeo;
+    login?: String;
+    estado?: boolean;
 }
